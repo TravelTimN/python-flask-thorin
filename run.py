@@ -47,9 +47,21 @@ def contact(): # this is the 'view'
     return render_template("contact.html", page_title=pageTitle, tab_title=pageTitle + tabTitle)
 
 if __name__ == "__main__":
+    """
+    # original from Code Institute videos
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=True)
+    """
+
+    """
+    # working with local projects
+    app.run(host=os.environ.get("IP"),
+            port=(os.environ.get("PORT")),
+            debug=True)
+    """
+
+    # pushing to live environment on Heroku
     app.run(host=os.environ.get("IP", "0.0.0.0"),
-            #port=int(os.environ.get("PORT")), # with port=int (the original)
-            #port=int(os.environ.get("PORT", 33507)), # with added port 33507
-            #port=int(os.environ.get("PORT", 5000)), # with added port 5000
-            port=(os.environ.get("PORT", "5000")), # works during deployment
+            port=(os.environ.get("PORT", "5000")),
             debug=True)
