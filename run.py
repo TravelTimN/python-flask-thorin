@@ -48,9 +48,15 @@ def contact(): # this is the 'view'
     return render_template("contact.html", page_title=pageTitle, tab_title=pageTitle + tabTitle)
 
 if __name__ == "__main__":
+    """
     app.run(host=os.environ.get("IP"),
-            #(original) port=int(os.environ.get("PORT")),
-            #(with added port 33507) port=int(os.environ.get("PORT", 33507)),
-            port=int(os.environ.get("PORT", 5000)),
-            #port=(os.environ.get("PORT")), # remove int from port=int
+            #port=int(os.environ.get("PORT")), # with port=int (the original)
+            #port=int(os.environ.get("PORT", 33507)), # with added port 33507
+            #port=int(os.environ.get("PORT", 5000)), # with added port 5000
+            port=(os.environ.get("PORT")), # works during deployment
+            debug=True)
+    """
+    
+    app.run(host=os.getenv("IP"),
+            port=os.getenv("PORT"),
             debug=True)
