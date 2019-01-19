@@ -56,7 +56,12 @@ if __name__ == "__main__":
             port=(os.environ.get("PORT")), # works during deployment
             debug=True)
     """
-    
+    """ (from @JoWings)
     app.run(host=os.getenv("IP"),
             port=os.getenv("PORT"),
             debug=False)
+    """
+
+    app.run(host=os.environ.get("IP", "0.0.0.0"),
+            port=os.environ.get("PORT", "5000"),
+            debug=True)
