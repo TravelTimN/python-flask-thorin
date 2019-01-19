@@ -51,6 +51,6 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             #(original) port=int(os.environ.get("PORT")),
             #(with added port 33507) port=int(os.environ.get("PORT", 33507)),
-            port=(os.environ.get("PORT")), # remove int from port=int
+            port=int(os.environ.get("PORT", 5000)),
+            #port=(os.environ.get("PORT")), # remove int from port=int
             debug=True)
-            app.run(host="0.0.0.0", port=port)
