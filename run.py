@@ -54,14 +54,16 @@ if __name__ == "__main__":
             debug=True)
     """
 
-    """
+    
     # working with local projects
     app.run(host=os.environ.get("IP"),
             port=(os.environ.get("PORT")),
             debug=True)
-    """
+    
 
+    """
     # pushing to live environment on Heroku
     app.run(host=os.environ.get("IP", "0.0.0.0"),
             port=(os.environ.get("PORT", "5000")),
             debug=True)
+    """
