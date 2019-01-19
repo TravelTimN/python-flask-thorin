@@ -19,26 +19,22 @@
 
     {% if loop.index % 2 != 0 %}
     <div class="col-md-7">
-        <h3>{{ loop.index }}. {{ member.name }}</h3>
-        <p>
-            {{ member.description }}
-        </p>
+        <h3>{{ loop.index }}. <a href="/about/{{ member.link }}">{{ member.name }}</a></h3>
+        <p>{{ member.description }}</p>
     </div>
     <div class="col-md-5">
-        <img src="{{ url_for('static', filename='img/characters/'+member.img_src) }}" class="featurette-image img-responsive"
-            alt="{{ member.name }}" title="{{ member.name }}">
+        <a href="/about/{{ member.link }}"><img src="{{ url_for('static', filename='img/characters/'+member.link+'.jpg') }}"
+                class="featurette-image img-responsive" alt="{{ member.name }}" title="{{ member.name }}"></a>
     </div>
 
     {% else %}
     <div class="col-md-5">
-        <img src="{{ url_for('static', filename='img/characters/'+member.img_src) }}" class="featurette-image img-responsive"
-            alt="{{ member.name }}" title="{{ member.name }}">
+        <a href="/about/{{ member.link }}"><img src="{{ url_for('static', filename='img/characters/'+member.link+'.jpg') }}"
+                class="featurette-image img-responsive" alt="{{ member.name }}" title="{{ member.name }}"></a>
     </div>
     <div class="col-md-7">
-        <h3>{{ loop.index }}. {{ member.name }}</h3>
-        <p>
-            {{ member.description }}
-        </p>
+        <h3>{{ loop.index }}. <a href="/about/{{ member.link }}">{{ member.name }}</a></h3>
+        <p>{{ member.description }}</p>
     </div>
     {% endif %}
 
