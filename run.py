@@ -9,8 +9,7 @@ tabTitle = " | "
 
 @app.route("/") # this is the 'decorator'
 def index(): # this is the 'view'
-    pageTitle = "Thorin & Company"
-    return render_template("index.html", page_title=pageTitle)
+    return render_template("index.html")
 
 @app.route("/about") # this is the 'decorator'
 def about(): # this is the 'view'
@@ -48,20 +47,9 @@ def contact(): # this is the 'view'
     return render_template("contact.html", page_title=pageTitle, tab_title=pageTitle + tabTitle)
 
 if __name__ == "__main__":
-    """
-    app.run(host=os.environ.get("IP"),
+    app.run(host=os.environ.get("IP", "0.0.0.0"),
             #port=int(os.environ.get("PORT")), # with port=int (the original)
             #port=int(os.environ.get("PORT", 33507)), # with added port 33507
             #port=int(os.environ.get("PORT", 5000)), # with added port 5000
-            port=(os.environ.get("PORT")), # works during deployment
-            debug=True)
-    """
-    """ (from @JoWings)
-    app.run(host=os.getenv("IP"),
-            port=os.getenv("PORT"),
-            debug=False)
-    """
-
-    app.run(host=os.environ.get("IP", "0.0.0.0"),
-            port=os.environ.get("PORT", "5000"),
+            port=(os.environ.get("PORT", "5000")), # works during deployment
             debug=True)
