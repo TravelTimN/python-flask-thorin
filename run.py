@@ -49,7 +49,7 @@ def contact(): # this is the 'view'
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            #(with added port 33507) port=int(os.environ.get("PORT", 33507)),
+            #(original) port=int(os.environ.get("PORT")),
+            port=int(os.environ.get("PORT", 33507)),
             #port=(os.environ.get("PORT")), # remove int from port=int
             debug=True)
